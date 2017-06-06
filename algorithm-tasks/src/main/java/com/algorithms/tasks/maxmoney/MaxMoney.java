@@ -65,7 +65,7 @@ public class MaxMoney {
 			} else if (i == endIdx - 1) {
 				impactAvoidance[i] = impacts[i - 1];
 			} else {
-				impactAvoidance[i] = (double) (impacts[i - 1] + impacts[i + 1]) / 2;
+				impactAvoidance[i] = (double) (impacts[i - 1] + impacts[i + 1]) - impacts[i];
 			}
 		}
 	}
