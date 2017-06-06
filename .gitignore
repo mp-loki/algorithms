@@ -1,0 +1,9 @@
+.metadata/**
+.recommenders/**
+algorithm-tasks/.classpath
+algorithm-tasks/.project
+algorithm-tasks/.settings/org.eclipse.jdt.core.prefs
+algorithm-tasks/.settings/org.eclipse.m2e.core.prefs
+.sonarlint/default/.sonartmp_5150896420684595064/sonar-plugin-api-deps3233282875258393698jar
+algorithm-tasks/target/**
+RemoteSystemsTempFiles/.project
