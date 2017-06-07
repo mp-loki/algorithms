@@ -13,7 +13,7 @@ public class MaxMoney {
 		int[] impacts = new int[array.length];
 		calculateImpacts(0, array.length, array, impacts);
 		double[] impactAvoidance = new double[array.length];
-		calculateImpactAvoidance(0, array.length, array, impacts, impactAvoidance);
+		calculateImpactAvoidance(0, array.length, impacts, impactAvoidance);
 		return calculateMaxMoney(0, array.length, array, impacts, impactAvoidance);
 	}
 
@@ -30,9 +30,9 @@ public class MaxMoney {
 		int tempSum = array[maxImpactAvoidanceIdx];
 
 		calculateImpacts(startIdx, maxImpactAvoidanceIdx - 1, array, impacts);
-		calculateImpactAvoidance(startIdx, maxImpactAvoidanceIdx - 1, array, impacts, impactAvoidance);
+		calculateImpactAvoidance(startIdx, maxImpactAvoidanceIdx - 1, impacts, impactAvoidance);
 		calculateImpacts(maxImpactAvoidanceIdx + 2, endIdx, array, impacts);
-		calculateImpactAvoidance(maxImpactAvoidanceIdx + 2, endIdx, array, impacts, impactAvoidance);
+		calculateImpactAvoidance(maxImpactAvoidanceIdx + 2, endIdx, impacts, impactAvoidance);
 
 		int leftSum = calculateMaxMoney(startIdx, maxImpactAvoidanceIdx - 1, array, impacts, impactAvoidance);
 		int rightSum = calculateMaxMoney(maxImpactAvoidanceIdx + 2, endIdx, array, impacts, impactAvoidance);
@@ -55,7 +55,8 @@ public class MaxMoney {
 		}
 	}
 
-	private void calculateImpactAvoidance(int startIdx, int endIdx, int[] array, int[] impacts, double[] impactAvoidance) {
+	private void calculateImpactAvoidance(int startIdx, int endIdx, int[] impacts,
+			double[] impactAvoidance) {
 		if (startIdx >= endIdx - 1) {
 			return;
 		}

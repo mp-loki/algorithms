@@ -95,4 +95,10 @@ public class MaxMoneyTest {
 		int[] array = { 2, 3, 2, 3, 2, 3, 2 };
 		assertEquals(9, maxMoney.calculateMaxMoney(array));
 	}
+	
+	@Test
+	public void testSevenElements3() {
+		int[] array = { 1, 8, 9, 10, 9, 8, 1 };
+		assertEquals(26, maxMoney.calculateMaxMoney(array));
+	}
 }
